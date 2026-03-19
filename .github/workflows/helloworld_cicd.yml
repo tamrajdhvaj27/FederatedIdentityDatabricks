@@ -36,8 +36,11 @@ jobs:
       - name: Install Databricks CLI
         uses: databricks/setup-cli@main
 
-      # - name: Who is logged?
-      #   uses: databricks current-user me
+      - name: get repos
+        uses: org/repo@version
+
+      - name: Who is logged?
+        uses: databricks current-user me
 
       - name: Validate bundle
         uses: databricks bundle validate --target dev
