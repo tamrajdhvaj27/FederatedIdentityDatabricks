@@ -1,0 +1,12 @@
+resources:
+  jobs:
+    helloWorldJob:
+      name: helloWorldJob
+      tasks:
+        - task_key: helloworldjob
+          notebook_task:
+            notebook_path: ../src/hello.py
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED

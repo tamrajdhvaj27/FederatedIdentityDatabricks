@@ -1,0 +1,11 @@
+bundle:
+  name: helloWorldDAB
+
+
+include:
+  - resources/*.yml
+  
+targets:
+  dev:
+    workspace:
+      host: https://dbc-f6ab2eda-6073.cloud.databricks.com
