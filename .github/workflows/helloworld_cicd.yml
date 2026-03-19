@@ -35,6 +35,7 @@ jobs:
       
       - name: Install Databricks CLI
         uses: databricks/setup-cli@main
+        
       - name: update repo
         run: databricks repos update /Workspace/Users/tamraj.dhvaj@zohomail.in/FederatedIdentityDatabricks/ --branch dev
 
