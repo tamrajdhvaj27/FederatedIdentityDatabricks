@@ -13,12 +13,20 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    environment: DEV
+    env:
+      DATABRICKS_AUTH_TYPE: github-oidc
+      DATABRICKS_HOST: https://dbc-f6ab2eda-6073.cloud.databricks.com/
+      DATARICKS_CLIENT_ID: 8ee5d7b6-f3e0-495f-b85c-db0eb69b4ee2
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
