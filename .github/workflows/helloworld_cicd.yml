@@ -32,13 +32,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
       
       - name: Install Databricks CLI
         uses: databricks/setup-cli@main
-
-      - name: Deploy to dev
-        if: github.ref == 'refs/heads/main'
 
       - name: Who is logged?
         uses: databricks current-user me
@@ -47,4 +43,5 @@ jobs:
         uses: databricks bundle validate --target dev
 
       - name: Deploy bundle
+        if: github.ref == 'refs/heads/main'
         run: databricks bundle deploy --target dev
