@@ -34,7 +34,9 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Install Databricks CLI
-        uses: databricks/setup-cli@main
+        # uses: databricks/setup-cli@main
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
 
       - name: update repo
         run: databricks repos update /Workspace/Users/tamraj.dhvaj@zohomail.in/FederatedIdentityDatabricks/ --branch dev
