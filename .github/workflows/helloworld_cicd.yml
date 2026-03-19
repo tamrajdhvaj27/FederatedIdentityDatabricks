@@ -36,14 +36,13 @@ jobs:
       - name: Install Databricks CLI
         uses: databricks/setup-cli@main
       - name: update repo
-        uses: databricks repos update /Workspace/Users/tamraj.dhvaj@zohomail.in/FederatedIdentityDatabricks/ --branch dev
+        run: databricks repos update --path /Workspace/Users/tamraj.dhvaj@zohomail.in/FederatedIdentityDatabricks/ --branch dev
 
       - name: Who is logged?
-        uses: databricks current-user me
+        run: databricks current-user me
 
       - name: Validate bundle
-        uses: databricks bundle validate --target dev
+        run: databricks bundle validate --target dev
       
       - name: Deploy bundle
-        if: github.ref == 'refs/heads/main'
         run: databricks bundle deploy --target dev
