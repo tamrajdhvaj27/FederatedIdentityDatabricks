@@ -3,7 +3,6 @@
 # [tool.databricks.environment]
 # environment_version = "4"
 # ///
-print("hello world!2")
-print("today deployed1")
+print("hello world!2!!")
 
 
