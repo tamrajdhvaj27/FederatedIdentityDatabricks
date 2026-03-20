@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Databricks CLI
-        run: databricks/setup-cli@main
+        uses: databricks/setup-cli@main
 
       # - name: Set up Python
       #   uses: actions/setup-python@v4
@@ -63,4 +63,4 @@ jobs:
 
       - name: Update Databricks Prod Repo
         run: |
-          databricks repos update /Workspace/Users/tamraj127@gmail.com/PRD-FederatedIdentityDatabricks --branch ${{ steps.extract_branch.outputs.branch }}
+          databricks repos update /Workspace/Users/tamraj127@gmail.com/prd_new_deployment --branch ${{ steps.extract_branch.outputs.branch }}
