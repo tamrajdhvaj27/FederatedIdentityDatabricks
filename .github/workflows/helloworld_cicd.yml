@@ -34,7 +34,7 @@ jobs:
 
       - name: Update Databricks Dev Repo
         run: |
-          databricks repos update --path /Workspace/Users/tamraj.dhvaj@zohomail.in/new_deployment --branch ${{ steps.extract_branch.outputs.branch }}
+          databricks repos update /Workspace/Users/tamraj.dhvaj@zohomail.in/new_deployment --branch ${{ steps.extract_branch.outputs.branch }}
 
   production_deploy:
     needs: development_deploy
@@ -63,4 +63,4 @@ jobs:
 
       - name: Update Databricks Prod Repo
         run: |
-          databricks repos update --path /Workspace/Users/tamraj127@gmail.com/prd_new_deployment --branch ${{ steps.extract_branch.outputs.branch }}
+          databricks repos update /Workspace/Users/tamraj127@gmail.com/prd_new_deployment --branch ${{ steps.extract_branch.outputs.branch }}
